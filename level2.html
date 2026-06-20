@@ -18,13 +18,13 @@
     <h1 style="color: #666666; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">
     </h1>
     <div style="margin: 0 auto; max-width: 600px;">
-        <img src="level1.jpg" alt="level1" 
+        <img src="level2.jpg" alt="level1" 
              style="width: 100%; border: 1px solid #222222; box-shadow: 0 0 15px rgba(255,255,255,0.05); filter: contrast(120%) brightness(80%);">
     </div>
 
     <!-- Main riddle text -->
     <div style="margin-top: 30px; font-size: 14px; line-height: 1.6;">
-        <p style="color: #ffffff; font-style: italic;">hmm...what could it be?</p>
+        <p style="color: #ffffff; font-style: italic;"></p>
     </div>
     <!-- A styled button that blends into your dark theme -->
 <button onclick="triggerGate()" style="background-color: #111; color: #666; border: 1px solid #333; padding: 10px 20px; font-family: monospace; cursor: pointer;">
@@ -34,14 +34,15 @@
 <script>
 function triggerGate() {
     // 1. First popup gives the hint and asks if they want to enter credentials
-    var response = confirm("HINT: the sequel");
+    var response = confirm("HINT: What good is it for a man to gain the whole world, yet forfeit his very soul?");
     
     // If the player clicks "OK", response is true. Now we ask for username and password.
     if (response === true) {
-        var login = prompt("Enter Username:", "Enter Password:");
+        var username = prompt("Enter Username:");
+        var password = prompt("Enter Password:");
         
         // Change "admin" and "kernel" to whatever answers you want!
-        if (username === "base" && password === "ment") {
+        if (username === "soul" && password === "world") {
             window.location.href = "level3.html"; // The next level file
         } else {
             alert(".wrong.");
