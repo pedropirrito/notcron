@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The classic mysterious, vague title -->
+    <title>1</title>
+</head>
+<!-- The styling captures the authentic pitch-black background and monospace tech font -->
+<body style="background-color: #000000; color: #b0b0b0; font-family: 'Courier New', Courier, monospace; text-align: center; padding: 40px 20px; margin: 0;">
+    <audio autoplay loop>
+  <source src="mus1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+    <!-- Title layout matching the old-school look -->
+    <h1 style="color: #666666; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">
+    </h1>
+    <div style="margin: 0 auto; max-width: 600px;">
+        <img src="level1.jpg" alt="level1" 
+             style="width: 100%; border: 1px solid #222222; box-shadow: 0 0 15px rgba(255,255,255,0.05); filter: contrast(120%) brightness(80%);">
+    </div>
+
+    <!-- Main riddle text -->
+    <div style="margin-top: 30px; font-size: 14px; line-height: 1.6;">
+        <p style="color: #ffffff; font-style: italic;">hmm...what could it be?</p>
+    </div>
+    <!-- A styled button that blends into your dark theme -->
+<button onclick="triggerGate()" style="background-color: #111; color: #666; border: 1px solid #333; padding: 10px 20px; font-family: monospace; cursor: pointer;">
+    .enter.
+</button>
+
+<script>
+function triggerGate() {
+    // 1. First popup gives the hint and asks if they want to enter credentials
+    var response = confirm("HINT: the sequel");
+    
+    // If the player clicks "OK", response is true. Now we ask for username and password.
+    if (response === true) {
+        var login = prompt("Enter Username:", "Enter Password:");
+        
+        // Change "admin" and "kernel" to whatever answers you want!
+        if (username === "base" && password === "ment") {
+            window.location.href = "level3.html"; // The next level file
+        } else {
+            alert(".wrong.");
+        }
+    }
+}
+</script>
+</body>
+</html>
