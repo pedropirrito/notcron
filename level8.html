@@ -30,21 +30,22 @@
   <p style="color: #000000; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">
   
   </p>
-    <!-- Audio element -->
-  <audio id="clickSound" src="sam.wav"></audio>
+  <!-- Audio element -->
+  <audio id="clickSound" src="sam.wav" preload="auto"></audio>
 
   <!-- Image acting as a button -->
-  <img src="wrench.png" id="imageButton" alt="wrench" style="cursor:pointer; width:150px;">
+  <img src="wrench.png" id="imageButton" alt="wrench" 
+       style="cursor:pointer; width:150px;">
 
   <!-- Script -->
   <script>
-    // Get references
-    var sound = document.getElementById("clickSound");
-    var imageButton = document.getElementById("imageButton");
+    const sound = document.getElementById("clickSound");
+    const imageButton = document.getElementById("imageButton");
 
-    // Add click event
-    imageButton.addEventListener("click", function() {
+    imageButton.addEventListener("click", () => {
+      sound.currentTime = 0; // restart sound if clicked repeatedly
       sound.play();
     });
+  </script>
 </body>
 </html>
