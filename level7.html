@@ -29,5 +29,28 @@
     <!-- A styled button that blends into your dark theme -->
   <p style="color: #ffffff; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">
   </p>
+
+    <button onclick="triggerGate()" style="background-color: #111; color: #666; border: 1px solid #333; padding: 10px 20px; font-family: monospace; cursor: pointer;">
+    .enter.
+</button>
+
+<script>
+function triggerGate() {
+    // 1. First popup gives the hint and asks if they want to enter credentials
+    var response = confirm("HINT: cipher");
+    
+    // If the player clicks "OK", response is true. Now we ask for username and password.
+    if (response === true) {
+        var username = prompt("Enter Username:");
+        var password = prompt("Enter Password:");
+        
+        // Change "admin" and "kernel" to whatever answers you want!
+        if (username === "reading" && password === "arsenic") {
+            window.location.href = "level8.html"; // The next level file
+        } else {
+            alert(".wrong.");
+        }
+    }
+}
 </body>
 </html>
